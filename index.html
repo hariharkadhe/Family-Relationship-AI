@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Relationship Query System | AI Prolog Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar: Management -->
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-users-cog"></i>
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class="management-card">
+                <h3>Add Family Member</h3>
+                <div class="input-group">
+                    <input type="text" id="memberName" placeholder="Name (e.g. Harihar)">
+                    <select id="memberGender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <button id="addMemberBtn"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </div>
+
+            <div class="management-card">
+                <h3>Add Relationship</h3>
+                <div class="input-group">
+                    <input type="text" id="parentName" placeholder="Parent">
+                    <input type="text" id="childName" placeholder="Child">
+                    <button id="addRelBtn"><i class="fas fa-link"></i> Link</button>
+                </div>
+            </div>
+
+            <div class="members-list-container">
+                <h3>Family Members</h3>
+                <ul id="membersList">
+                    <!-- Dynamic List -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content: Query Engine -->
+        <main class="main-content">
+            <header class="app-header">
+                <h1>Family AI <span class="accent">Logic Engine</span></h1>
+                <p>Advanced Symbolic AI Relationship Deductor</p>
+            </header>
+
+            <section class="query-section">
+                <div class="input-wrapper">
+                    <input type="text" id="queryInput" placeholder="Enter query (e.g. grandfather(X, mehul))"
+                        autocomplete="off">
+                    <button id="submitBtn">
+                        <span class="btn-text">Execute</span>
+                        <div class="spinner"></div>
+                    </button>
+                </div>
+
+                <div class="result-card" id="resultCard">
+                    <div class="card-header">
+                        <span class="status-dot"></span>
+                        <h3>Engine Result</h3>
+                    </div>
+                    <div id="resultOutput" class="placeholder-text">Waiting for input...</div>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h3>Quick Examples</h3>
+                <div class="example-chips">
+                    <span class="chip">father(X, vivek)</span>
+                    <span class="chip">mother(X, mehul)</span>
+                    <span class="chip">sibling(vivek, X)</span>
+                    <span class="chip">grandfather(X, mehul)</span>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar: Visualizer -->
+        <aside class="sidebar right-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-project-diagram"></i>
+                <h2>Logic Visualizer</h2>
+            </div>
+            <div class="visualizer-container" id="visualizer">
+                <div class="visualizer-placeholder">
+                    Run a query to see the logical structure
+                </div>
+                <!-- SVG Graph will be injected here -->
+                <svg id="visualizerSvg"></svg>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Powered by SWI-Prolog Engine & Node.js</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
